@@ -16,13 +16,14 @@
       </el-carousel-item>
       </el-carousel>
       <!-- 猜你喜欢 -->
-      <div>
+      <div class="likeDiv">
         <div class="header">
           <span class="text">猜你喜欢</span>
         </div>
         <div class="list">
           <ul>
             <li>
+            <!-- <li @click="toDetail(ite.id)"> -->
               <div>
                 <img src="@/assets/4.jpg" alt="">
                 <span>少年的你</span>
@@ -66,11 +67,30 @@ export default {
   name: 'home',
   components: {
 
+  },
+  methods:{
+    // toDetail(id){
+    //   this.$router.push({
+    //     path:'/',
+    //     query:{id:Id}
+    //   })
+    // }
   }
 }
 </script>
 <style scoped>
-.text{
+.el-carousel{
+  width:1200px;
+  margin: 0 auto;
+}
+.likeDiv{
+  width: 1200px;
+  margin: 0 auto;
+}
+.list ul li{
+  display: inline-block
+}
+/* .text{
   display: inline-block;
   line-height: 28px;
   font-size: 24px;
@@ -82,7 +102,6 @@ ul {
 }
 li{
   display: inline;
-  /* line-height: 40px; */
   float: left;
   margin-right: 15px;
 }
@@ -90,7 +109,7 @@ li{
   display: block;
   padding-top: 30px;
   padding-left: 50px;
-}
+} */
 h2{
   font-weight: 400;
 }

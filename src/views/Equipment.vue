@@ -1,7 +1,7 @@
 <template>
     <div class="model">
-        <el-carousel trigger="click" height="600px">
-      <el-carousel-item>
+        <el-carousel trigger="click" height="600px" :autoplay="false">
+      <el-carousel-item >
           <div id="wk">
               <p id="dbt">聚会模式</p>
               <p id="bt">播放设备：</p>
@@ -190,7 +190,7 @@
               <div id="kz">
                   <div id="sb2">
                       <h3 id="cjsbm">一路灯</h3>
-                      <div id="kg"><el-switch v-model="value" active-color="#13ce66" inactive-color="#ff4949">
+                      <div id="kg"><el-switch v-model="value" active-color="#13ce66" inactive-color="#ff4949" @change='openLight_1($event,1)'>
                       </el-switch>
                       </div>
                       <h3 id="cjsbm">二路灯</h3>
@@ -214,16 +214,37 @@
 </template>
 
 <script>
+import {mapState,mapActions,mapGetters} from 'vuex'
   export default {
     data() {
       return {
         value1: 0,
-        value: true,
+        value: false,
         value2: false,
         value3: false,
         value4: true,
       }
+    },
+  created(){
+    
+  },
+  computed:{
+    
+  },
+  methods:{
+    ...mapActions('equipment',['openLight1','closeLight1']),
+
+    openLight_1(a,b){
+        console.log(this.value,b)
+    //   this.openLight1(true);
+    if(!this.value){
+        this.openLight1(b)
+    }else{
+        this.closeLight1(b)
     }
+      console.log("aaaaaaaaaa")
+    }
+  },
   }
 </script>
 

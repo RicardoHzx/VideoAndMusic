@@ -4,8 +4,7 @@ import qs from 'qs'
 // 全局配置
 // axios.defaults.headers.common["token"] = ""
 // axios.defaults.headers.post["Content-Type"] = 'application/x-www-form-urlencoded;charset=UTF-8';
-axios.defaults.baseURL = 'http://127.0.0.1:9999';
-
+axios.defaults.baseURL = 'http://10.0.0.29:9001';
 
 
 // Add a response interceptor

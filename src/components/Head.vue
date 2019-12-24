@@ -63,6 +63,9 @@ export default {
 </script>
 
 <style scoped>
+  .el-submenu__title{
+    line-height: 0 !important;
+  }
   .header{
     box-shadow: 0 0.5px 0.5px 0 #c9c9c9;
   }

@@ -42,9 +42,17 @@ const routes = [
     name: 'movie',
     component: () => import(/* webpackChunkName: "control" */ '../views/test/Movie.vue')
   },{
+    path: '/play',
+    name: 'play',
+    component: () => import(/* webpackChunkName: "control" */ '../views/Play.vue')
+  },{
     path: '/music',
     name: 'music',
-    component: () => import(/* webpackChunkName: "control" */ '../views/test/Music.vue')
+    component: () => import(/* webpackChunkName: "control" */ '../views/test/Music.vue'),
+  //   children:[{
+  //         path: '/play',
+  //         component: () => import(/* webpackChunkName: "movie" */ '../views/Play.vue'),
+  //  }]
   },{
     path: '/teleplay',
     name: 'teleplay',
