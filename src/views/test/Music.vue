@@ -5,41 +5,41 @@
                 <div id="bt"><p>热门歌曲:</p></div>
                 <div id="z1q">
                     <a href=""><img id="songImg1"  style="height:100%; width:100%"/></a>
-					<a href=""><p align="center" id="songName1"></p></a>
+					<div id="gqm"><a href=""><p align="center" id="songName1"></p></a></div>
                 </div>
                 <div id="z1q">
                     <a href=""><img id="songImg2" style="height:100%; width:100%"/></a>
-				    <a href=""><p align="center" id="songName2"></p></a>
+				    <div id="gqm"><a href=""><p align="center" id="songName2"></p></a></div>
                 </div>
                 <div id="z1q">
                     <a href=""><img id="songImg3" style="height:100%; width:100%"/></a>
-					<a href=""><p align="center" id="songName3"></p></a>
+					<div id="gqm"><a href=""><p align="center" id="songName3"></p></a></div>
                 </div>
                 <div id="z1q">
-                    <a href=""><img id="songImg4" style="height:100%; width:100%"/></a>
-					<a href=""><p align="center" id="songName4"></p></a>
+                    <a href=""><img src="@/assets/我最亲爱的.png" style="height:100%; width:100%"/></a>
+					<div id="gqm"><a href=""><p align="center">我最亲爱的</p></a></div>
                 </div>
                 <div id="z1q">
-                    <a href=""><img id="songImg6" style="height:100%; width:100%"/></a>
-					<a href=""><p align="center" id="songName5"></p></a>
+                    <a href=""><img src="@/assets/非攻.png" style="height:100%; width:100%"/></a>
+					<div id="gqm"><a href=""><p align="center">非攻</p></a></div>
                 </div>
                 <div id="z1q">
-                    <a href=""><img id="songImg6" style="height:100%; width:100%"/></a>
-					<a href=""><p align="center" id="songName6"></p></a>
+                    <a href=""><img src="@/assets/所见之日.png" style="height:100%; width:100%"/></a>
+					<div id="gqm"><a href=""><p align="center">所见之日乃是终止之时</p></a></div>
                 </div>
                 <div id="z1q">
-                    <a href=""><img id="songImg7" style="height:100%; width:100%"/></a>
-					<a href=""><p align="center" id="songName7"></p></a>
+                    <a href=""><img src="@/assets/不可能.png" style="height:100%; width:100%"/></a>
+					<div id="gqm"><a href=""><p align="center">不可能</p></a></div>
                 </div>
                 <div id="z1q">
-                    <a href=""><img  id="songImg8" style="height:100%; width:100%"/></a>
-					<a href=""><p align="center" id="songName8"></p></a>
+                    <a href=""><img  src="@/assets/第一顺位.png" style="height:100%; width:100%"/></a>
+					<div id="gqm"><a href=""><p align="center">第一顺位</p></a></div>
                 </div>
             </div>
             <div id="y1">
             <div id="bt"><p>分类:</p></div>
             <div id="ya">
-                <div id="au"><el-button round>情歌</el-button></div>
+                <div id="au"><el-button round><router-link to="/play">情歌</router-link></el-button></div>
                 <div id="au"><el-button round>红歌</el-button></div>
                 <div id="au"><el-button round>劲爆</el-button></div>
                 <div id="au"><el-button round>伤感</el-button></div>
@@ -50,6 +50,7 @@
                 <div id="au"><el-button round>80后</el-button></div>
                 <div id="au"><el-button round>儿歌</el-button></div>
                 <div id="au"><el-button round>安静</el-button></div>
+            <router-view></router-view>
             </div>
             </div>
             <div id="y2">
@@ -95,47 +96,47 @@
         <div id="z2">
                 <div id="bt"><p>新曲速递:</p></div>
                 <div id="z1q">
-                    <a href=""><img id="songImg1"  style="height:100%; width:100%"/></a>
-					<a href=""><p align="center" id="songName1"></p></a>
+                    <a href=""><img id="songImg4"  style="height:100%; width:100%"/></a>
+					<div id="gqm"><a href=""><p align="center" id="songName4"></p></a></div>
                 </div>
                 <div id="z1q">
-                    <a href=""><img id="songImg2" style="height:100%; width:100%"/></a>
-				    <a href=""><p align="center" id="songName2"></p></a>
+                    <a href=""><img  src="@/assets/过去了.png" style="height:100%; width:100%"/></a>
+					<div id="gqm"><a href=""><p align="center">过去了</p></a></div>
                 </div>
                 <div id="z1q">
-                    <a href=""><img id="songImg3" style="height:100%; width:100%"/></a>
-					<a href=""><p align="center" id="songName3"></p></a>
+                    <a href=""><img  src="@/assets/其实好想她.png" style="height:100%; width:100%"/></a>
+					<div id="gqm"><a href=""><p align="center">其实好想她</p></a></div>
                 </div>
                 <div id="z1q">
-                    <a href=""><img id="songImg4" style="height:100%; width:100%"/></a>
-					<a href=""><p align="center" id="songName4"></p></a>
+                    <a href=""><img  src="@/assets/红尘不恋.png" style="height:100%; width:100%"/></a>
+					<div id="gqm"><a href=""><p align="center">红尘不恋</p></a></div>
                 </div>
                 <div id="z1q">
-                    <a href=""><img id="songImg4" style="height:100%; width:100%"/></a>
-					<a href=""><p align="center" id="songName4"></p></a>
+                    <a href=""><img  src="@/assets/剑器行.png" style="height:100%; width:100%"/></a>
+					<div id="gqm"><a href=""><p align="center">剑器行</p></a></div>
                 </div>
             </div>
             <div id="z2">
-                <div id="bt"><p>冷门精品:</p></div>
+                <div id="bt"><p>精品推广:</p></div>
                 <div id="z1q">
-                    <a href=""><img id="songImg1"  style="height:100%; width:100%"/></a>
-					<a href=""><p align="center" id="songName1"></p></a>
+                    <a href=""><img id="songImg5"  style="height:100%; width:100%"/></a>
+					<div id="gqm"><a href=""><p align="center" id="songName5"></p></a></div>
                 </div>
                 <div id="z1q">
-                    <a href=""><img id="songImg2" style="height:100%; width:100%"/></a>
-				    <a href=""><p align="center" id="songName2"></p></a>
+                    <a href=""><img  src="@/assets/无处可逃.png" style="height:100%; width:100%"/></a>
+					<div id="gqm"><a href=""><p align="center">无处可逃</p></a></div>
                 </div>
                 <div id="z1q">
-                    <a href=""><img id="songImg3" style="height:100%; width:100%"/></a>
-					<a href=""><p align="center" id="songName3"></p></a>
+                    <a href=""><img  src="@/assets/亘古如斯.png" style="height:100%; width:100%"/></a>
+					<div id="gqm"><a href=""><p align="center">亘古如斯</p></a></div>
                 </div>
                 <div id="z1q">
-                    <a href=""><img id="songImg4" style="height:100%; width:100%"/></a>
-					<a href=""><p align="center" id="songName4"></p></a>
+                    <a href=""><img  src="@/assets/梦回嘉峪关.png" style="height:100%; width:100%"/></a>
+					<div id="gqm"><a href=""><p align="center">梦回嘉峪关</p></a></div>
                 </div>
                 <div id="z1q">
-                    <a href=""><img id="songImg4" style="height:100%; width:100%"/></a>
-					<a href=""><p align="center" id="songName4"></p></a>
+                    <a href=""><img  src="@/assets/标准答案.png" style="height:100%; width:100%"/></a>
+					<div id="gqm"><a href=""><p align="center">标准答案</p></a></div>
                 </div>
             </div>
     </div>
@@ -256,4 +257,7 @@ export default {
         width: 100%;
         height: 320px;
     }
+  #gqm{
+      margin-top: 23px;
+  }
 </style>
