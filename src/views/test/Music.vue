@@ -5,11 +5,11 @@
                 <div id="bt"><p>热门歌曲:</p></div>
                 <div id="z1q">
                     <a href=""><img id="songImg1"  style="height:100%; width:100%"/></a>
-					          <a href=""><p align="center" id="songName1"></p></a>
-                    <div id="z1q">
-                    <a href=""><img id="songImg2" style="height:100%; width:100%"/></a>
-				            <a href=""><p align="center" id="songName2"></p></a>
+					<a href=""><p align="center" id="songName1"></p></a>
                 </div>
+                <div id="z1q">
+                    <a href=""><img id="songImg2" style="height:100%; width:100%"/></a>
+				    <a href=""><p align="center" id="songName2"></p></a>
                 </div>
                 <div id="z1q">
                     <a href=""><img id="songImg3" style="height:100%; width:100%"/></a>
@@ -92,27 +92,57 @@
             </div>
         </div>
         <router-view class="playContent"/>
+        <div id="z2">
+                <div id="bt"><p>新曲速递:</p></div>
+                <div id="z1q">
+                    <a href=""><img id="songImg1"  style="height:100%; width:100%"/></a>
+					<a href=""><p align="center" id="songName1"></p></a>
+                </div>
+                <div id="z1q">
+                    <a href=""><img id="songImg2" style="height:100%; width:100%"/></a>
+				    <a href=""><p align="center" id="songName2"></p></a>
+                </div>
+                <div id="z1q">
+                    <a href=""><img id="songImg3" style="height:100%; width:100%"/></a>
+					<a href=""><p align="center" id="songName3"></p></a>
+                </div>
+                <div id="z1q">
+                    <a href=""><img id="songImg4" style="height:100%; width:100%"/></a>
+					<a href=""><p align="center" id="songName4"></p></a>
+                </div>
+                <div id="z1q">
+                    <a href=""><img id="songImg4" style="height:100%; width:100%"/></a>
+					<a href=""><p align="center" id="songName4"></p></a>
+                </div>
+            </div>
+            <div id="z2">
+                <div id="bt"><p>冷门精品:</p></div>
+                <div id="z1q">
+                    <a href=""><img id="songImg1"  style="height:100%; width:100%"/></a>
+					<a href=""><p align="center" id="songName1"></p></a>
+                </div>
+                <div id="z1q">
+                    <a href=""><img id="songImg2" style="height:100%; width:100%"/></a>
+				    <a href=""><p align="center" id="songName2"></p></a>
+                </div>
+                <div id="z1q">
+                    <a href=""><img id="songImg3" style="height:100%; width:100%"/></a>
+					<a href=""><p align="center" id="songName3"></p></a>
+                </div>
+                <div id="z1q">
+                    <a href=""><img id="songImg4" style="height:100%; width:100%"/></a>
+					<a href=""><p align="center" id="songName4"></p></a>
+                </div>
+                <div id="z1q">
+                    <a href=""><img id="songImg4" style="height:100%; width:100%"/></a>
+					<a href=""><p align="center" id="songName4"></p></a>
+                </div>
+            </div>
     </div>
+    
 </template>
 
-<!--<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>-->
-
 <script>
-
-// import $ from 'jquery';
-
-// let HOST="http://player.wicp.vip";
-// $(function(){
-//    $.ajax({
-//      url:HOST+"videos/getAllVideos",
-//      type:"GET",
-//      dataType:"json",
-//      success:function(ret){
-//          console.log(" "+ret.data);
-//      }
-//    })
-// });
-
 
 export default {
   data () {
@@ -153,6 +183,10 @@ export default {
 </script>
 
 <style scoped>
+    .play{
+        margin-top: 30px;
+        float: left;
+    }
     #z1{
         float: left;
         width: 70%;
@@ -168,9 +202,9 @@ export default {
     }
     #z1q{
         float: left;
-        width: 18%;
-        height: 40%;
-        margin:5% 0% 0% 5%;
+        width: 166px;
+        height: 200px;
+        margin:2% 0% 5% 5%;
         line-height: 10px;
     }
     #y1{
@@ -180,7 +214,6 @@ export default {
     }
     #ya{
         float: left;
-        margin: 5% 0% 0% 0%;
     }
     #au{
         float: left;
@@ -218,4 +251,9 @@ export default {
   .el-carousel__item:nth-child(2n+1) {
     background-color: #d3dce6;
   }
+  #z2{
+        float: left;
+        width: 100%;
+        height: 320px;
+    }
 </style>

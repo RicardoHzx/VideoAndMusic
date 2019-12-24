@@ -56,6 +56,61 @@
           </ul>
         </div>
       </div>
+      <div>
+        <div class="header">
+          <span class="text">经典必看</span>
+        </div>
+        <div class="list">
+          <ul>
+            <li>
+              <div>
+                <img src="@/assets/4.jpg" alt="">
+                <span>少年的你</span>
+              </div>
+            </li>
+            <li>
+              <div>
+                <img src="@/assets/4.jpg" alt="">
+                <router-link to="/sence">少年的你</router-link>
+              </div>
+            </li>
+            <li>
+              <div>
+                <img src="@/assets/4.jpg" alt="">
+                <span>少年的你</span>
+              </div>
+            </li>
+            <li>
+              <div>
+                <img src="@/assets/4.jpg" alt="">
+                <span>少年的你</span>
+              </div>
+            </li>
+            <li>
+              <div>
+                <img src="@/assets/4.jpg" alt="">
+                <span>少年的你</span>
+              </div>
+            </li>       
+          </ul>
+        </div>
+      </div>
+      <div id="bottom">
+			<div id="bo1">
+				<div id="bo11"><a href=""><p align="center">营业执照</p></a></div>
+				<div id="bo12"><a href="https://www.itrust.org.cn/yz/pjwx.asp?wm=1660527705"><p align="center">中国互联网诚信联盟</p></a></div>
+				<div id="bo13"><a href=""><p align="center">经营性网站备案信息</p></a></div>
+				<div id="bo14"><a href=""><p align="center">增值电信业务许可证</p></a></div>
+				<div id="bo15"><a href=""><p align="center">网络电视节目制作经营许可证</p></a></div>
+			</div>
+			<div id="bo2">
+				<div id="bo21"><a href="http://www.12377.cn/"><p align="center">中国互联网举报中心</p></a></div>
+				<div id="bo22"><a href=""><p align="center">网络举报APP下载</p></a></div>
+				<div id="bo23"><a href=""><p align="center">反盗版和反盗链权利声明</p></a></div>
+				<div id="bo24"><a href=""><p align="center">违法和不良信息举报电话</p></a></div>
+				<div id="bo25"><a href=""><p align="center">举报邮箱</p></a></div>
+			</div>
+		</div>
   </div>
 </template>
 
@@ -178,4 +233,22 @@ h2{
     width: 100%;
     height: 100%;
   }
+  #bottom{
+	width:100%;
+	height:20%;
+  margin-top: 30px;
+	float:left;
+	background:#778899;
+}
+#bo1，#bo2{
+	width:100%;
+	height:5%;
+	float:left;
+	margin:2% 0% 0% 0%;
+}
+#bo11,#bo12,#bo13,#bo14,#bo15,#bo21,#bo22,#bo23,#bo24,#bo25{
+	width:19%;
+	height:45%;
+	float:left;
+	}
 </style>
