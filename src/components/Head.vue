@@ -22,10 +22,10 @@
                 <router-link to="">
                   <img class="cart-icon" src="" alt="">
                   <!-- <img class="cart-icon" src="@/assets/cart.svg" alt=""> -->
-                  <span><router-link to="/equipment">模式</router-link></span>
+                  <span><router-link to="/equipment">情景模式</router-link></span>
                 </router-link>
               </el-col>
-              <el-col class="study" :span="8" :offset="2"><router-link to="control">设置</router-link></el-col>
+              <el-col class="study" :span="8" :offset="2"><router-link to="control">设备控制</router-link></el-col>
               <el-col class="member" :span="5">
                 <el-menu class="el-menu-demo" mode="horizontal">
                   <el-submenu index="2">
