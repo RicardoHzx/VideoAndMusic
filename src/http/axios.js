@@ -5,6 +5,7 @@ import qs from 'qs'
 // axios.defaults.headers.common["token"] = ""
 // axios.defaults.headers.post["Content-Type"] = 'application/x-www-form-urlencoded;charset=UTF-8';
 axios.defaults.baseURL = 'http://10.0.0.29:9001';
+// axios.defaults.baseURL = 'http://10.0.0.29:9001';
 
 
 // Add a response interceptor
