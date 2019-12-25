@@ -205,11 +205,7 @@
               <div id="kz">
                   <div id="sb2">
                       <h3 id="cjsbm">一路灯</h3>
-<<<<<<< HEAD
                       <div id="kg"><el-switch v-model="value" active-color="#13ce66" inactive-color="#ff4949" @change='openLight_1($event,1)'>
-=======
-                      <div id="kg"><el-switch v-model="value13" active-color="#13ce66" inactive-color="#ff4949">
->>>>>>> dc47a95ddb276af364069745bd95edcecd566e36
                       </el-switch>
                       </div>
                       <h3 id="cjsbm">二路灯</h3>
@@ -237,16 +233,8 @@ import {mapState,mapActions,mapGetters} from 'vuex'
   export default {
     data() {
       return {
-<<<<<<< HEAD
         value1: 0,
         value: false,
-=======
-        v1: 0,
-        v2: 36,
-        v3: 0,
-
-        value1: true,
->>>>>>> dc47a95ddb276af364069745bd95edcecd566e36
         value2: false,
         value3: false,
         value4: true,

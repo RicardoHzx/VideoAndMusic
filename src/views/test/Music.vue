@@ -3,18 +3,15 @@
         <div class="playNav">
             <div id="z1">
                 <div id="bt"><p>热门歌曲:</p></div>
-                <div id="z1q">
+                <div id="z1q" v-for="item in songs" :key="item.id">
                     <a href=""><img id="songImg1"  style="height:100%; width:100%"/></a>
 					<div id="gqm"><a href=""><p align="center" id="songName1"></p></a></div>
+                    <div>{{item.songName}}</div>
+                    <!-- <audio :src="item.src"></audio> -->
+                    <div @click="toPlay(item.src)"></div>
                 </div>
-                <div id="z1q">
-                    <a href=""><img id="songImg2" style="height:100%; width:100%"/></a>
-				    <div id="gqm"><a href=""><p align="center" id="songName2"></p></a></div>
-                </div>
-                <div id="z1q">
-                    <a href=""><img id="songImg3" style="height:100%; width:100%"/></a>
-					<div id="gqm"><a href=""><p align="center" id="songName3"></p></a></div>
-                </div>
+                
+                
                 <div id="z1q">
                     <a href=""><img src="@/assets/我最亲爱的.png" style="height:100%; width:100%"/></a>
 					<div id="gqm"><a href=""><p align="center">我最亲爱的</p></a></div>
@@ -144,7 +141,7 @@
 </template>
 
 <script>
-
+import {mapActions,mapState} from 'vuex'
 export default {
   data () {
     return {
@@ -178,6 +175,15 @@ export default {
         address: 'Mili'
       }]
     }
+  },
+  computed:{
+      ...mapState('music',['songs']),
+  },
+  created(){
+      this.findAllSong()
+  },
+  methods:{
+      ...mapActions('music',['findAllSong']),
   }
 }
 

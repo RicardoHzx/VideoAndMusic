@@ -2,7 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Control from '../views/Control.vue'
-import Play from '../views/Play.vue'
+import Play from '../views/music/Play.vue'
+import Toplay from '../views/music/Toplay.vue'
 import Sence from '../views/Sence.vue'
 import Equipment from '../views/Equipment.vue'
 import FunctionList from '../views/FunctionList.vue'
@@ -40,19 +41,19 @@ const routes = [
   {
     path: '/movie',
     name: 'movie',
-    component: () => import(/* webpackChunkName: "control" */ '../views/test/Movie.vue')
+    component: () => import('../views/test/Movie.vue')
   },{
     path: '/play',
     name: 'play',
-    component: () => import(/* webpackChunkName: "control" */ '../views/Play.vue')
+    component: () => import('../views/music/Play.vue')
+  },{
+    path: '/toplay',
+    name: 'toplay',
+    component: () => import('../views/music/Toplay.vue')
   },{
     path: '/music',
     name: 'music',
     component: () => import(/* webpackChunkName: "control" */ '../views/test/Music.vue'),
-  //   children:[{
-  //         path: '/play',
-  //         component: () => import(/* webpackChunkName: "movie" */ '../views/Play.vue'),
-  //  }]
   },{
     path: '/teleplay',
     name: 'teleplay',
