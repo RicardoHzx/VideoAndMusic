@@ -284,7 +284,7 @@ import {mapState,mapActions,mapGetters} from 'vuex'
     }else{
         this.closeLight1(b)
     }
-      console.log("aaaaaaaaaa")
+    //   console.log("aaaaaaaaaa")
     }
   },
   }

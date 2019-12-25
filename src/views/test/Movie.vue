@@ -86,28 +86,28 @@
 					<div id="gqm"><a href=""><p align="center">爱的迫降</p></a></div>
                 </div>
                 <div id="z1q">
-                    <a href=""><img src="@/assets/q2.png" style="height:100%; width:100%"/></a>
-					<div id="gqm"><a href=""><p align="center">小丑</p></a></div>
+                    <a href=""><img src="@/assets/w3.png" style="height:100%; width:100%"/></a>
+					<div id="gqm"><a href=""><p align="center">精英律师</p></a></div>
                 </div>
                 <div id="z1q">
-                    <a href=""><img src="@/assets/q3.png" style="height:100%; width:100%"/></a>
-					<div id="gqm"><a href=""><p align="center">原钻</p></a></div>
+                    <a href=""><img src="@/assets/w4.png" style="height:100%; width:100%"/></a>
+					<div id="gqm"><a href=""><p align="center">生活如沸</p></a></div>
                 </div>
             <div id="z1q">
-                    <a href=""><img id="movie2"  style="height:100%; width:100%"/></a>
-					<div id="gqm"><a href=""><p align="center" id="movie2"></p></a></div>
+                    <a href=""><img src="@/assets/w5.png"  style="height:100%; width:100%"/></a>
+					<div id="gqm"><a href=""><p align="center">大明风华</p></a></div>
                 </div>
                 <div id="z1q">
-                    <a href=""><img src="@/assets/q1.png" style="height:100%; width:100%"/></a>
-					<div id="gqm"><a href=""><p align="center">82年生的金智英</p></a></div>
+                    <a href=""><img src="@/assets/w6.png" style="height:100%; width:100%"/></a>
+					<div id="gqm"><a href=""><p align="center">剑王朝</p></a></div>
                 </div>
                 <div id="z1q">
-                    <a href=""><img src="@/assets/q2.png" style="height:100%; width:100%"/></a>
-					<div id="gqm"><a href=""><p align="center">小丑</p></a></div>
+                    <a href=""><img src="@/assets/w7.png" style="height:100%; width:100%"/></a>
+					<div id="gqm"><a href=""><p align="center">明星大侦探 第五季</p></a></div>
                 </div>
                 <div id="z1q">
-                    <a href=""><img src="@/assets/q3.png" style="height:100%; width:100%"/></a>
-					<div id="gqm"><a href=""><p align="center">原钻</p></a></div>
+                    <a href=""><img src="@/assets/w8.png" style="height:100%; width:100%"/></a>
+					<div id="gqm"><a href=""><p align="center">精神变态日记</p></a></div>
                 </div>
             </div>
         </div>

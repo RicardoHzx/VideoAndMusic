@@ -10,9 +10,7 @@
           </el-col>
           <el-col class="nav" :span="16">
               <el-row>
-                <el-col :span="3"><router-link to="/movie">电影</router-link></el-col>
-                <el-col :span="3"><router-link to="/teleplay">电视剧</router-link></el-col>
-                <el-col :span="3"><router-link to="/variety">综艺</router-link></el-col>
+                <el-col :span="3"><router-link to="/movie">影音</router-link></el-col>
                 <el-col :span="3"><router-link to="/music">音乐</router-link></el-col>
               </el-row>
           </el-col>

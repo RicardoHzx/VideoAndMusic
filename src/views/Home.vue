@@ -15,87 +15,53 @@
           <img src="@/assets/h_banner3.jpg" alt="">
       </el-carousel-item>
       </el-carousel>
-      <!-- 猜你喜欢 -->
-      <div class="likeDiv">
-        <div class="header">
-          <span class="text">猜你喜欢</span>
+      <div id="cnxh">
+        <h2>猜你喜欢:</h2>
+        <div id="z1q">
+          <a href=""><img id="movie1"  style="height:100%; width:100%"/></a>
+          <div id="gqm"><a href=""><p align="center" id="movie1"></p></a></div>
         </div>
-        <div class="list">
-          <ul>
-            <li>
-            <!-- <li @click="toDetail(ite.id)"> -->
-              <div>
-                <img src="@/assets/4.jpg" alt="">
-                <span>少年的你</span>
-              </div>
-            </li>
-            <li>
-              <div>
-                <img src="@/assets/4.jpg" alt="">
-                <!-- <span>少年的你</span> -->
-                <router-link to="/sence">少年的你</router-link>
-              </div>
-            </li>
-            <li>
-              <div>
-                <img src="@/assets/4.jpg" alt="">
-                <span>少年的你</span>
-              </div>
-            </li>
-            <li>
-              <div>
-                <img src="@/assets/4.jpg" alt="">
-                <span>少年的你</span>
-              </div>
-            </li>
-            <li>
-              <div>
-                <img src="@/assets/4.jpg" alt="">
-                <span>少年的你</span>
-              </div>
-            </li>       
-          </ul>
+        <div id="z1q">
+          <a href=""><img id="movie2"  style="height:100%; width:100%"/></a>
+          <div id="gqm"><a href=""><p align="center" id="movie2"></p></a></div>
+        </div>
+        <div id="z1q">
+          <a href=""><img src="@/assets/q2.png" style="height:100%; width:100%"/></a>
+          <div id="gqm"><a href=""><p align="center">小丑</p></a></div>
+          </div>
+        <div id="z1q">
+          <a href=""><img src="@/assets/q3.png" style="height:100%; width:100%"/></a>
+          <div id="gqm"><a href=""><p align="center">原钻</p></a></div>
+        </div>
+        <div id="z1q">
+          <a href=""><img src="@/assets/w1.png" style="height:100%; width:100%"/></a>
+					<div id="gqm"><a href=""><p align="center">庆余年</p></a></div>
         </div>
       </div>
-      <div>
-        <div class="header">
-          <span class="text">经典必看</span>
-        </div>
-        <div class="list">
-          <ul>
-            <li>
-              <div>
-                <img src="@/assets/4.jpg" alt="">
-                <span>少年的你</span>
-              </div>
-            </li>
-            <li>
-              <div>
-                <img src="@/assets/4.jpg" alt="">
-                <router-link to="/sence">少年的你</router-link>
-              </div>
-            </li>
-            <li>
-              <div>
-                <img src="@/assets/4.jpg" alt="">
-                <span>少年的你</span>
-              </div>
-            </li>
-            <li>
-              <div>
-                <img src="@/assets/4.jpg" alt="">
-                <span>少年的你</span>
-              </div>
-            </li>
-            <li>
-              <div>
-                <img src="@/assets/4.jpg" alt="">
-                <span>少年的你</span>
-              </div>
-            </li>       
-          </ul>
-        </div>
+      <div id="cnxh">
+        <h2>热门搜索：</h2>
+        <div id="z1q">
+                    <a href=""><img src="@/assets/yx1.jpg" style="height:100%; width:100%"/></a>
+					<div id="gqm"><a href=""><p align="center">一个母亲的复仇</p></a></div>
+                </div>
+                <div id="z1q">
+                    <a href=""><img src="@/assets/ys3.png" style="height:100%; width:100%"/></a>
+					<div id="gqm"><a href=""><p align="center">教授与疯子</p></a></div>
+                </div>
+        <div id="z1q">
+                    <a href=""><img id="songImg1"  style="height:100%; width:100%"/></a>
+					<div id="gqm"><a href=""><p align="center" id="songName1"></p></a></div>
+                </div>
+                <div id="z1q">
+                    <a href=""><img id="songImg2" style="height:100%; width:100%"/></a>
+				    <div id="gqm"><a href=""><p align="center" id="songName2"></p></a></div>
+                </div>
+                <div id="z1q">
+                    <a href=""><img id="songImg3" style="height:100%; width:100%"/></a>
+					<div id="gqm"><a href=""><p align="center" id="songName3"></p></a></div>
+                </div>
       </div>
+      
       <div id="bottom">
 			<div id="bo1">
 				<div id="bo11"><a href=""><p align="center">营业执照</p></a></div>
@@ -138,33 +104,7 @@ export default {
   width:1200px;
   margin: 0 auto;
 }
-.likeDiv{
-  width: 1200px;
-  margin: 0 auto;
-}
-.list ul li{
-  display: inline-block
-}
-/* .text{
-  display: inline-block;
-  line-height: 28px;
-  font-size: 24px;
-  padding-top: 30px;
-  padding-left: 50px;
-}
-ul {
-  list-style: none;
-}
-li{
-  display: inline;
-  float: left;
-  margin-right: 15px;
-}
-.list{
-  display: block;
-  padding-top: 30px;
-  padding-left: 50px;
-} */
+
 h2{
   font-weight: 400;
 }
@@ -269,5 +209,23 @@ h2{
 	width:19%;
 	height:45%;
 	float:left;
-	}
+}
+#cnxh{
+  float: left;
+  margin:0 0 0 0; 
+  width: 1300px;
+  height: 320px;
+  margin-left: 75px;
+  margin-top: 15px;
+}
+#z1q{
+  float: left;
+  width: 166px;
+  height: 200px;
+  margin:2% 7% 5% 0%;
+  line-height: 10px;
+}
+#gqm{
+  margin-top: 23px;
+}
 </style>
