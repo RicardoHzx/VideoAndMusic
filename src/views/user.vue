@@ -81,7 +81,7 @@ export default {
         "#e23c66"
       ], //阴影颜色列表
       directionList: ["leftTop", "leftBottom", "rightTop", "rightBottom"], //星星运行方向
-      speed: 50, //星星运行速度
+      speed: 10, //星星运行速度
       last_star_created_time: new Date(), //上次重绘星星时间
       Ball: class Ball {
         constructor(radius) {
@@ -237,13 +237,14 @@ export default {
   color: #fff;
   font-family: "Source Sans Pro";
   background-size: 100%;
-  background-image: url("../../../static/images/Starry.jpg");
+  background-image: url("../assets/Starry.jpg");
   position: relative;
   #bgd {
     height: 100vh;
     width: 100vw;
     overflow: hidden;
   }
+  
   #loginBox {
     width: 240px;
     height: 280px;
