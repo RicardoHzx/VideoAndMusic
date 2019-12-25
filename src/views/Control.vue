@@ -30,19 +30,19 @@
               <div id="kz">
                   <div id="sb2">
                       <h3 id="cjsbm">一路灯</h3>
-                      <div id="kg"><el-switch v-model="value1" active-color="#13ce66" inactive-color="#ff4949">
+                      <div id="kg"><el-switch v-model="value1" active-color="#13ce66" inactive-color="#ff4949" @change='openLight_1($event,1)'>
                       </el-switch>
                       </div>
                       <h3 id="cjsbm">二路灯</h3>
-                      <div id="kg"><el-switch v-model="value2" active-color="#13ce66" inactive-color="#ff4949">
+                      <div id="kg"><el-switch v-model="value2" active-color="#13ce66" inactive-color="#ff4949" @change='openLight_2($event,1)'>
                       </el-switch>
                       </div>
                       <h3 id="cjsbm">三路灯</h3>
-                      <div id="kg"><el-switch v-model="value3" active-color="#13ce66" inactive-color="#ff4949">
+                      <div id="kg"><el-switch v-model="value3" active-color="#13ce66" inactive-color="#ff4949" @change='openLight_3($event,1)'>
                       </el-switch>
                       </div>
                       <h3 id="cjsbm">窗帘</h3>
-                      <div id="kg"><el-switch v-model="value4" active-color="#13ce66" inactive-color="#ff4949">
+                      <div id="kg"><el-switch v-model="value4" active-color="#13ce66" inactive-color="#ff4949" @change='opencurtain($event,1)'>
                       </el-switch>
                       </div>
                   </div>
@@ -51,20 +51,64 @@
 </template>
 
 <script>
+  import {mapState,mapActions,mapGetters} from 'vuex'
   export default {
     data() {
       return {
-        v1: 0,
-        v2: 36,
-        v3: 0,
+        v1:0,
+        v2:0,
+        v3:0,
 
-        value1: true,
+        value1: false,
         value2: false,
         value3: false,
-        value4: true
+        value4: false
       }
+    },
+  created(){
+    
+  },
+  computed:{
+    
+  },
+  methods:{
+    ...mapActions('Control',['openLight1','closeLight1','openLight2','closeLight2','openLight3','closeLight3','opencurtain','closecurtain']),
+
+    openLight_1(a,b){
+        console.log(this.value1,b)
+    if(!this.value1){
+        this.openLight1(b)
+    }else{
+        this.closeLight1(b)
     }
-  }
+    },
+    openLight_2(a,b){
+        console.log(this.value2,b)
+    if(!this.value2){
+        this.openLight2(b)
+    }else{
+        this.closeLight2(b)
+    }
+    },
+    openLight_3(a,b){
+        console.log(this.value3,b)
+    if(!this.value3){
+        this.openLight3(b)
+    }else{
+        this.closeLight3(b)
+    }
+    },
+    opencurtain(a,b){
+        console.log(this.value4,b)
+    if(!this.value4){
+        this.opencurtain(b)
+    }else{
+        this.closecurtain(b)
+    }
+    }
+  },
+}
+  
 </script>
 
 <style scoped>
