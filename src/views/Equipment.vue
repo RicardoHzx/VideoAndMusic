@@ -233,6 +233,10 @@ import {mapState,mapActions,mapGetters} from 'vuex'
   export default {
     data() {
       return {
+        v1:0,
+        v2:0,
+        v3:0,
+        
         value1: 0,
         value: false,
         value2: false,

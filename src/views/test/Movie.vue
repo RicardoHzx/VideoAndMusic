@@ -10,6 +10,9 @@
                 <div id="z1q">
                     <a href=""><img id="movie1"  style="height:100%; width:100%"/></a>
 					<div id="gqm"><a href=""><p align="center" id="movie1"></p></a></div>
+                    <div>{{item.movie1Name}}</div>
+                    
+                    <!-- <div @click="toPlay(item.src)"></div> -->
                 </div>
                 <div id="z1q">
                     <a href=""><img src="@/assets/ys1.jpg" style="height:100%; width:100%"/></a>
