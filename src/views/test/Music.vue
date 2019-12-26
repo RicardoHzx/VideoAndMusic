@@ -2,13 +2,14 @@
     <div class="play">
         <div class="playNav">
             <div id="z1">
+                <!-- {{songs}} -->
                 <div id="bt"><p>热门歌曲:</p></div>
                 <div id="z1q" v-for="item in songs" :key="item.id">
                     <a href=""><img id="songImg1"  style="height:100%; width:100%"/></a>
 					<div id="gqm"><a href=""><p align="center" id="songName1"></p></a></div>
                     <div>{{item.songName}}</div>
                     <!-- <audio :src="item.src"></audio> -->
-                    <div @click="toPlay(item.src)"></div>
+                    <!-- <div @click.prevent="toPlayHandler(record.row)"></div> -->
                 </div>
                 
                 
@@ -57,6 +58,7 @@
                     :data="tableData"
                     height="200"
                     border
+                    @row-click="toPlay"
                     style="width: 100%">
                     <el-table-column
                     prop="date"
@@ -65,7 +67,8 @@
                     <el-table-column
                     prop="name"
                     label="音乐标题"
-                    width="200">
+                    width="200"
+                    >
                     </el-table-column>
                     <el-table-column
                     prop="address"
@@ -184,6 +187,17 @@ export default {
   },
   methods:{
       ...mapActions('music',['findAllSong']),
+        toPlay(){
+            console.log(111)
+            this.$router.push({path:'/play'})
+        }
+        // 普通方法
+        // toPlayHandler(customer){
+        //     this.$router.push({
+        //         path:"/music/Toplay",
+        //         query:{id:songs.id}
+        //     })
+        // },
   }
 }
 

@@ -1,62 +1,65 @@
 <template>
     <div class="play">
-        <div class="table">
+        <div class="song">
+            <!-- {{songs}} -->
             <el-table
-                :data="tableData"
-                style="width: 60%;margin-top:5px">
-                <el-table-column
-                    prop="date"
-                    label="歌曲"
-                    width="180">
-                </el-table-column>
-                <el-table-column
-                    prop="name"
-                    label="歌手"
-                    width="180">
-                </el-table-column>
-                <el-table-column
-                    prop="address"
-                    label="专辑">
-                </el-table-column>
-                 <el-table-column
-                    prop="set"
-                    label="播放">
-                    <template >
-                        <el-button type="text" size="medium "><i class="el-icon-video-play"></i></el-button>
-                        <el-button type="text" size="small">编辑</el-button>
+            :data="songs"
+            style="width: 60%;margin-top:5px">
+                <!-- <el-table-column type="selection" width="55"></el-table-column> -->
+                <el-table-column prop="id" label="编号"></el-table-column>
+                <el-table-column prop="songName" label="歌曲名"></el-table-column>
+                <el-table-column prop="author" label="作者"></el-table-column>
+                <el-table-column label="操作">
+                    <template slot-scope="scope">
+                        <el-button
+                        @click.native.prevent="toPlay(scope.row)"
+                        type="text"
+                        size="small">
+                        移除
+                        </el-button>
                     </template>
+                    <!-- <template slot-scope="scope">
+                     
+                        <el-button type="text"><i class="el-icon-video-play" @click="toPlay(record.row)"></i></el-button>
+                    </template> -->
                 </el-table-column>
             </el-table>
         </div>
-        <div class="nav_left">
-            
-        </div>
-        <div>
-            <aplayer autoplay
-                :music="{
-                    title: 'Preparation',
-                    author: 'Hans Zimmer/Richard Harvey',
-                    url: 'http://devtest.qiniudn.com/Preparation.mp3',
-                    pic: 'http://devtest.qiniudn.com/Preparation.jpg',
-                    lrc: '[00:00.00]lrc here\n[00:01.00]aplayer'
-                }"
-                />
-        </div>
-        <router-view></router-view>
+        <audio :src="songSrc[0]" controls="controls" autoplay></audio>
+
     </div>
 </template>
 <script>
+import {mapState,mapActions,mapGetters} from 'vuex'
+
  export default {
       data() {
         return {
-          tableData: [{
-            date: '2016-05-02',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路',     
-            
-          }]
+          song:{},
+        //   songs:[{
+        //       id:8,
+        //       songName:'樱花草',
+        //       author:'Swerty',
+        //       src:'http://172.20.10.6:9001/play/playSong/8'
+        //   }],
+          songSrc:[],
         }
-      }
+      },
+        computed:{
+            ...mapState("music",["songs"]),
+        },
+        created(){
+            this.findAllSong();
+        },
+        methods:{
+            ...mapActions("music",["findAllSong"]),
+
+            toPlay(item){
+                console.log(item,"aaaa")
+                this.songSrc.push(item.src)
+            }
+            
+        }
     }
     </script>
 <style scoped>
