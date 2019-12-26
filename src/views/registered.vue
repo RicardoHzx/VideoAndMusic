@@ -9,8 +9,23 @@
       </canvas>
     </div>
     <div id="loginBox">
-      <h4 align="center">影音娱乐，享受你的生活</h4>
-      <el-form
+      <h4 align="center">影音娱乐，享受你的生活</h4><br/>
+      <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm" style="margin-left:-60px;">
+        <el-form-item  label="账号:" prop="age">
+            <el-input class="inps" v-model.number="ruleForm.age"></el-input>
+        </el-form-item>
+        <el-form-item label="密码:" prop="pass">
+            <el-input class="inps" type="password" v-model="ruleForm.pass" autocomplete="off"></el-input>
+        </el-form-item>
+        <el-form-item label="确认密码:" prop="checkPass">
+            <el-input class="inps" type="password" v-model="ruleForm.checkPass" autocomplete="off"></el-input>
+        </el-form-item>
+        <el-form-item>
+            <el-button type="primary" @click="submitForm('ruleForm')">注册</el-button>
+            <el-button @click="resetForm('ruleForm')" style="margin-left:30px;">重置</el-button>
+        </el-form-item>
+      </el-form>
+      <!--<el-form
         :model="loginForm"
         :rules="loginRules"
         ref="loginForm"
@@ -22,16 +37,14 @@
           style="margin-top:20px;"
         >
           <el-row>
-            <!--<el-col :span='2'>
-              <span class="iconfont">&#xe654;</span>
-            </el-col>-->
+            
             <el-col :span='2'>
             <img src="@/assets/用户1.png" width="25px" height="25px"/>
             </el-col>
             <el-col :span='22'>
               <el-input
                 class="inps"
-                placeholder='账户'
+                placeholder='用户名'
                 v-model="loginForm.userName"
               ></el-input>
             </el-col>
@@ -48,28 +61,43 @@
             <el-col :span='22'>
               <el-input
                 class="inps"
-                type="password"
                 placeholder='密码'
                 v-model="loginForm.passWord"
               ></el-input>
-              </el-col>
+            </el-col>
+          </el-row>
+          </el-form-item>
+          <el-form-item
+          label=""
+          prop="passWord"
+        >
+          <el-row>
+            <el-col :span='2'>
+              <img src="@/assets/密码.png" width="25px" height="25px"/>
+            </el-col>
+            <el-col :span='22'>
+              <el-input
+                class="inps"
+                placeholder='确认密码'
+                v-model="loginForm.passWord2"
+              ></el-input>
+            </el-col>
+            <el-col :span='22'>
+                <br/>
+            </el-col>
           </el-row>
         </el-form-item>
-        <el-form-item>
-            <el-col>
-              <p align="center">还没有用户？请先<router-link to="/registered">注册</router-link></p>
-            </el-col>
-        </el-form-item>
-        <el-form-item style="margin:0px 0px 0px 20px;">
+
+        <el-form-item style="margin:-30px 0px 0px 20px;">
           <el-button
             type="primary"
             round
             class="submitBtn"
             @click="submitForm"
             
-          >登录</el-button>
+          >注册</el-button>
         </el-form-item>
-      </el-form>
+      </el-form>-->
     </div>
   </div>
 </template>
@@ -77,7 +105,54 @@
 <script>
 export default {
   data() {
+      var checkAge = (rule, value, callback) => {
+        if (value === '') {
+          return callback(new Error('账号不能为空'));
+        }
+        setTimeout(() => {
+          if (!Number.isInteger(value)) {
+            callback(new Error('请输入数字值'));
+          } else {
+            
+          }
+        }, 1000);
+      };
+      var validatePass = (rule, value, callback) => {
+        if (value === '') {
+          callback(new Error('请输入密码'));
+        } else {
+          if (this.ruleForm.checkPass !== '') {
+            this.$refs.ruleForm.validateField('checkPass');
+          }
+          callback();
+        }
+      };
+      var validatePass2 = (rule, value, callback) => {
+        if (value === '') {
+          callback(new Error('请再次输入密码'));
+        } else if (value !== this.ruleForm.pass) {
+          callback(new Error('两次输入密码不一致!'));
+        } else {
+          callback();
+        }
+      };
     return {
+        ruleForm: {
+          pass: '',
+          checkPass: '',
+          age: ''
+        },
+        rules: {
+          pass: [
+            { validator: validatePass, trigger: 'blur' }
+          ],
+          checkPass: [
+            { validator: validatePass2, trigger: 'blur' }
+          ],
+          age: [
+            { validator: checkAge, trigger: 'blur' }
+          ]
+        },
       canvas: null,
       context: null,
       stars: [], //星星数组
@@ -128,17 +203,33 @@ export default {
       height: window.innerHeight,
       loginForm: {
         userName: "",
-        passWord: ""
+        passWord: "",
+        passWord2: ""
       },
       loginRules: {
         userName: [
           { required: true, message: "请输入用户名", trigger: "blur" }
         ],
-        passWord: [{ required: true, message: "请输入密码", trigger: "blur" }]
+        passWord: [{ required: true, message: "请输入密码", trigger: "blur" }],
+        passWord2: [{ required: true, message: "请再次输入密码", trigger: "blur" }]
+
       }
     };
   },
   methods: {
+      submitForm(formName) {
+        this.$refs[formName].validate((valid) => {
+          if (valid) {
+            alert('submit!');
+          } else {
+            console.log('error submit!!');
+            return false;
+          }
+        });
+      },
+      resetForm(formName) {
+        this.$refs[formName].resetFields();
+      },
     //提交登录
     submitForm() {},
     //重复动画
@@ -231,10 +322,15 @@ export default {
     this.createStar(true);
     this.drawFrame();
   }
-};
+}
 </script>
 
-<style lang='less' scoped>
+<style lang='less' >
+.el-form-item__label{color:rgb(218, 213, 213)}
+.el-input__inner{
+    border: none;
+    background-color: transparent;
+}
 #login {
   width: 100vw;
   padding: 0;
@@ -244,7 +340,7 @@ export default {
   background-repeat: no-repeat;
   background-position: left top;
   background-color: #242645;
-  color: #fff;
+  color: rgb(218, 213, 213);
   font-family: "Source Sans Pro";
   background-size: 100%;
   background-image: url("../assets/Starry.jpg");
@@ -288,4 +384,5 @@ export default {
     }
   }
 }
+
 </style>

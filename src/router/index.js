@@ -25,6 +25,16 @@ const routes = [
     name: 'user',
     component: () => import('../views/user.vue')
   },
+  {
+    path: '/UserPage',
+    name: 'UserPage',
+    component: () => import('../views/UserPage.vue')
+  },
+  {
+    path: '/registered',
+    name: 'registered',
+    component: () => import('../views/registered.vue')
+  },
   // {
   //   path: '/play',
   //   name: 'play',
