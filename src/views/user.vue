@@ -9,7 +9,7 @@
       </canvas>
     </div>
     <div id="loginBox">
-      <h4>登录</h4>
+      <h4 align="center">影音娱乐，享受你的生活</h4>
       <el-form
         :model="loginForm"
         :rules="loginRules"
@@ -19,11 +19,14 @@
         <el-form-item
           label=""
           prop="userName"
-          style="margin-top:40px;"
+          style="margin-top:20px;"
         >
           <el-row>
-            <el-col :span='2'>
+            <!--<el-col :span='2'>
               <span class="iconfont">&#xe654;</span>
+            </el-col>-->
+            <el-col :span='2'>
+            <img src="@/assets/用户1.png" width="25px" height="25px"/>
             </el-col>
             <el-col :span='22'>
               <el-input
@@ -38,9 +41,10 @@
           label=""
           prop="passWord"
         >
+        
           <el-row>
             <el-col :span='2'>
-              <span class="iconfont">&#xe616;</span>
+              <img src="@/assets/密码.png" width="25px" height="25px"/>
             </el-col>
             <el-col :span='22'>
               <el-input
@@ -49,14 +53,21 @@
                 v-model="loginForm.passWord"
               ></el-input>
             </el-col>
+            <el-col :span='22'>
+              <br/>
+            </el-col>
+            <el-col>
+              <p align="center">还没有用户？请先<a href="">注册</a></p>
+            </el-col>
           </el-row>
         </el-form-item>
-        <el-form-item style="margin-top:55px;">
+        <el-form-item style="margin:0px 0px 0px 20px;">
           <el-button
             type="primary"
             round
             class="submitBtn"
             @click="submitForm"
+            
           >登录</el-button>
         </el-form-item>
       </el-form>
@@ -81,7 +92,7 @@ export default {
         "#e23c66"
       ], //阴影颜色列表
       directionList: ["leftTop", "leftBottom", "rightTop", "rightBottom"], //星星运行方向
-      speed: 10, //星星运行速度
+      speed: 7, //星星运行速度
       last_star_created_time: new Date(), //上次重绘星星时间
       Ball: class Ball {
         constructor(radius) {
@@ -254,7 +265,7 @@ export default {
     right: 0;
     bottom: 0;
     margin: auto;
-    padding: 50px 40px 40px 40px;
+    padding: 40px 40px 40px 40px;
     box-shadow: -15px 15px 15px rgba(6, 17, 47, 0.7);
     opacity: 1;
     background: linear-gradient(

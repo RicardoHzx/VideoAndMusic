@@ -28,7 +28,7 @@
                 <el-menu class="el-menu-demo" mode="horizontal">
                   <el-submenu index="2">
                     <template slot="title">
-                            <router-link to="">
+                            <router-link to="/user">
                                 <img src="" alt="">
                                 <!-- <img src="@/assets/logo@2x.png" alt=""> -->
                             </router-link>
