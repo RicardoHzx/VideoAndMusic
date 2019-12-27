@@ -25,6 +25,8 @@
         <el-table-column prop="city"  label="时长" width="80"></el-table-column>
         </el-table>
         </div>
+        
+        <el-button type="primary" style="margin:50px 30px 0 20px; float:right">添加收藏</el-button>
     </div>
     </div>
 </template>

@@ -4,6 +4,7 @@
       <el-carousel-item >
           <div id="wk">
               <p id="dbt">聚会模式</p>
+              <el-button type="primary" id="gg">启用模式</el-button>
               <el-button type="primary" id="gg">保存更改</el-button>
               <p id="bt">播放设备：</p><p id="bfnr">播放内容：</p>
               <div id="kz">
@@ -60,6 +61,7 @@
       <el-carousel-item>
           <div id="wk">
               <p id="dbt">睡眠模式</p>
+              <el-button type="primary" id="gg">启用模式</el-button>
               <el-button type="primary" id="gg">保存更改</el-button>
               <p id="bt">播放设备：</p><p id="bfnr">播放内容：</p>
               <div id="kz">
@@ -116,6 +118,7 @@
       <el-carousel-item>
           <div id="wk">
               <p id="dbt">阅读模式</p>
+              <el-button type="primary" id="gg">启用模式</el-button>
               <el-button type="primary" id="gg">保存更改</el-button>
               <p id="bt">播放设备：</p><p id="bfnr">播放内容：</p>
               <div id="kz">
@@ -171,6 +174,7 @@
        <el-carousel-item>
          <div id="wk">
               <p id="dbt">儿童模式</p>
+              <el-button type="primary" id="gg">启用模式</el-button>
               <el-button type="primary" id="gg">保存更改</el-button>
               <p id="bt">播放设备：</p><p id="bfnr">播放内容：</p>
               <div id="kz">
@@ -224,6 +228,106 @@
               </div>
           </div>
       </el-carousel-item>
+      <el-carousel-item>
+           <div id="wk">
+              <p id="dbt">自定义模式</p>
+                <el-table
+                    :data="tableData"
+                    height="400"
+                    border
+                    style="width: 100%">
+                    <el-table-column
+                    prop="number"
+                    label="编号"
+                    width="60">
+                    <template slot-scope="scope">
+                        <span style="margin-left: 10px">{{ scope.row.number}}</span>
+                    </template>
+                    </el-table-column>
+                    <el-table-column
+                    prop="name"
+                    label="模式名"
+                    width="110">
+                    </el-table-column>
+                    <el-table-column
+                    label="播放设备">
+                        <el-table-column
+                        prop="moviename"
+                        label="设备名"
+                        width="100">
+                        <template slot-scope="scope">
+                            <span style="margin-left: 10px">{{ scope.row.moviename}}</span>
+                        </template>
+                        </el-table-column>
+                        <el-table-column
+                        prop="movie"
+                        label="播放内容"
+                        width="160">
+                        <template slot-scope="scope">
+                            <span style="margin-left: 10px">{{ scope.row.movie}}</span>
+                        </template>
+                        </el-table-column>
+                        <el-table-column
+                        prop="volume"
+                        label="音量"
+                        width="90">
+                        <template slot-scope="scope">
+                            <span style="margin-left: 10px">{{ scope.row.volume}}</span>
+                        </template>
+                        </el-table-column>
+                    </el-table-column>
+                    <el-table-column
+                    label="场景设备">
+                        <el-table-column
+                        prop="l1"
+                        label="灯1"
+                        width="90">
+                        <template slot-scope="scope">
+                            <span style="margin-left: 10px">{{ scope.row.l1}}</span>
+                        </template>
+                        </el-table-column>
+                        <el-table-column
+                        prop="l2"
+                        label="灯2"
+                        width="90">
+                        <template slot-scope="scope">
+                            <span style="margin-left: 10px">{{ scope.row.l2}}</span>
+                        </template>
+                        </el-table-column>
+                        <el-table-column
+                        prop="l3"
+                        label="灯3"
+                        width="90">
+                        <template slot-scope="scope">
+                            <span style="margin-left: 10px">{{ scope.row.l3}}</span>
+                        </template>
+                        </el-table-column>
+                        <el-table-column
+                        prop="curtain"
+                        label="窗帘"
+                        width="90">
+                        <template slot-scope="scope">
+                            <span style="margin-left: 10px">{{ scope.row.curtain}}</span>
+                        </template>
+                        </el-table-column>
+                        </el-table-column>
+                        <el-table-column label="操作">
+                            <template slot-scope="scope">
+                                <el-button
+                                size="mini"
+                                @click="handleopen(scope.$index, scope.row)">启用</el-button>
+                                <el-button
+                                size="mini"
+                                @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
+                                <el-button
+                                size="mini"
+                                type="danger"
+                                @click="handleDelete(scope.$index, scope.row)">删除</el-button>
+                            </template>
+                        </el-table-column>
+                </el-table>
+           </div>
+      </el-carousel-item>
       </el-carousel>
     </div>
 </template>
@@ -269,6 +373,16 @@ import {mapState,mapActions,mapGetters} from 'vuex'
         value14: true,
         value15: false,
         value16: true,
+
+        tableData: [{
+            number:'',
+            moviename:'',
+            volume:'',
+            l1:'',
+            l2:'',
+            l3:'',
+            curtain:'',
+        }]
       }
     },
   created(){
@@ -278,6 +392,16 @@ import {mapState,mapActions,mapGetters} from 'vuex'
     
   },
   methods:{
+      handleopen(index, row) {
+        console.log(index, row);
+      },
+      handleEdit(index, row) {
+        console.log(index, row);
+      },
+      handleDelete(index, row) {
+        console.log(index, row);
+      },
+      
     ...mapActions('equipment',['openLight1','closeLight1']),
 
     openLight_1(a,b){
@@ -306,7 +430,7 @@ import {mapState,mapActions,mapGetters} from 'vuex'
     }
     #dbt{
         float: left;
-        width: 80%;
+        width: 68%;
         font-size: 30px;
         line-height: 40px;
     }

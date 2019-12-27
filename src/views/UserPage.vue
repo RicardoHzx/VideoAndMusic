@@ -8,7 +8,7 @@
           <div id="mba"> 
             <el-collapse v-model="activeNames" @change="handleChange">
                 <el-collapse-item title="收藏的电影" name="1">
-                    <el-table :data="tableData1" style="width: 100%">
+                    <el-table :data="movie" style="width: 100%">
                     <el-table-column  prop="date" label="" width="40">
                     </el-table-column>
                     <el-table-column  prop="name"  label="名称"  width="180">
