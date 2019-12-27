@@ -10,9 +10,12 @@
     </div>
     <div id="loginBox">
       <h4 align="center">影音娱乐，享受你的生活</h4><br/>
-      <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm" style="margin-left:-60px;">
-        <el-form-item  label="账号:" prop="age">
-            <el-input class="inps" v-model.number="ruleForm.age"></el-input>
+      <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm" style="margin-left:-55px;">
+        <el-form-item  label="用户名:" prop="name">
+            <el-input class="inps" v-model="ruleForm.name"></el-input>
+        </el-form-item>
+        <el-form-item  label="账号:" prop="zh">
+            <el-input class="inps" v-model.number="ruleForm.zh"></el-input>
         </el-form-item>
         <el-form-item label="密码:" prop="pass">
             <el-input class="inps" type="password" v-model="ruleForm.pass" autocomplete="off"></el-input>
@@ -25,79 +28,6 @@
             <el-button @click="resetForm('ruleForm')" style="margin-left:30px;">重置</el-button>
         </el-form-item>
       </el-form>
-      <!--<el-form
-        :model="loginForm"
-        :rules="loginRules"
-        ref="loginForm"
-        label-width="0px"
-      >
-        <el-form-item
-          label=""
-          prop="userName"
-          style="margin-top:20px;"
-        >
-          <el-row>
-            
-            <el-col :span='2'>
-            <img src="@/assets/用户1.png" width="25px" height="25px"/>
-            </el-col>
-            <el-col :span='22'>
-              <el-input
-                class="inps"
-                placeholder='用户名'
-                v-model="loginForm.userName"
-              ></el-input>
-            </el-col>
-          </el-row>
-        </el-form-item>
-        <el-form-item
-          label=""
-          prop="passWord"
-        >
-          <el-row>
-            <el-col :span='2'>
-              <img src="@/assets/密码.png" width="25px" height="25px"/>
-            </el-col>
-            <el-col :span='22'>
-              <el-input
-                class="inps"
-                placeholder='密码'
-                v-model="loginForm.passWord"
-              ></el-input>
-            </el-col>
-          </el-row>
-          </el-form-item>
-          <el-form-item
-          label=""
-          prop="passWord"
-        >
-          <el-row>
-            <el-col :span='2'>
-              <img src="@/assets/密码.png" width="25px" height="25px"/>
-            </el-col>
-            <el-col :span='22'>
-              <el-input
-                class="inps"
-                placeholder='确认密码'
-                v-model="loginForm.passWord2"
-              ></el-input>
-            </el-col>
-            <el-col :span='22'>
-                <br/>
-            </el-col>
-          </el-row>
-        </el-form-item>
-
-        <el-form-item style="margin:-30px 0px 0px 20px;">
-          <el-button
-            type="primary"
-            round
-            class="submitBtn"
-            @click="submitForm"
-            
-          >注册</el-button>
-        </el-form-item>
-      </el-form>-->
     </div>
   </div>
 </template>
@@ -105,17 +35,25 @@
 <script>
 export default {
   data() {
-      var checkAge = (rule, value, callback) => {
+    var validatename = (rule, value, callback) => {
         if (value === '') {
-          return callback(new Error('账号不能为空'));
-        }
-        setTimeout(() => {
-          if (!Number.isInteger(value)) {
-            callback(new Error('请输入数字值'));
-          } else {
-            
+          callback(new Error('请输入用户名'));
+        } else {
+          if (this.ruleForm.checkname !== '') {
+            this.$refs.ruleForm.validateField('checkname');
           }
-        }, 1000);
+          callback();
+        }
+      };
+      var validatezh = (rule, value, callback) => {
+        if (value === '') {
+         callback(new Error('账号不能为空'));
+        }else {
+          if (this.ruleForm.checkPass !== '') {
+            this.$refs.ruleForm.validateField('checkzh');
+            }
+          callback();
+        }
       };
       var validatePass = (rule, value, callback) => {
         if (value === '') {
@@ -138,9 +76,11 @@ export default {
       };
     return {
         ruleForm: {
+          name: '',
+          zh: '',
           pass: '',
-          checkPass: '',
-          age: ''
+          checkPass: ''
+          
         },
         rules: {
           pass: [
@@ -149,8 +89,11 @@ export default {
           checkPass: [
             { validator: validatePass2, trigger: 'blur' }
           ],
-          age: [
-            { validator: checkAge, trigger: 'blur' }
+          zh: [
+            { validator: validatezh, trigger: 'blur' }
+          ],
+          name: [
+            { validator: validatename, trigger: 'blur' }
           ]
         },
       canvas: null,
@@ -352,8 +295,8 @@ export default {
   }
   
   #loginBox {
-    width: 240px;
-    height: 280px;
+    width: 260px;
+    height: 340px;
     position: absolute;
     top: 0;
     left: 0;

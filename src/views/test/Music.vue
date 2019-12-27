@@ -2,14 +2,11 @@
     <div class="play">
         <div class="playNav">
             <div id="z1">
-                <!-- {{songs}} -->
                 <div id="bt"><p>热门歌曲:</p></div>
                 <div id="z1q" v-for="item in songs" :key="item.id">
-                    <a href=""><img id="songImg1"  style="height:100%; width:100%"/></a>
+                    <a href=""><img id="songImg1" :src="item.headImage" style="height:100%; width:100%"/></a>
 					<div id="gqm"><a href=""><p align="center" id="songName1"></p></a></div>
                     <div><p align="center">{{item.songName}}</p></div>
-                    <!-- <audio :src="item.src"></audio> -->
-                    <!-- <div @click.prevent="toPlayHandler(record.row)"></div> -->
                 </div>
                 <div id="z1q">
                     <a href=""><img src="@/assets/我最亲爱的.png" style="height:100%; width:100%"/></a>
@@ -188,7 +185,8 @@ export default {
         toPlay(){
             console.log(111)
             this.$router.push({path:'/play'})
-        }
+        },
+        
         // 普通方法
         // toPlayHandler(customer){
         //     this.$router.push({

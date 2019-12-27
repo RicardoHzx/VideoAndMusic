@@ -3,16 +3,16 @@
         <!-- <div id="ry">
           <div id="bt"><p>正在热映:</p></div> 
         </div> -->
+        {{movies}}
         <div id="f1"></div>
         <h2 id="tbq">正在热映:</h2>
         <div id="z1"><el-carousel :interval-position="outside" height="270px" >
             <el-carousel-item>
-                <div id="z1q">
-                    <a href=""><img id="movie1"  style="height:100%; width:100%"/></a>
+                <div id="z1q"  v-for="item in videos" :key="item.id">
+                    <a href=""><img id="movie1" :src="item.headImage" style="height:100%; width:100%"/></a>
 					<div id="gqm"><a href=""><p align="center" id="movie1"></p></a></div>
-                    <!--<div>{{item.movie1Name}}</div> -->
-                    
-                    <!-- <div @click="toPlay(item.src)"></div> -->
+                    <div><p align="center">{{item.videoName}}</p></div>
+
                 </div>
                 <div id="z1q">
                     <a href=""><img src="@/assets/ys1.jpg" style="height:100%; width:100%"/></a>
@@ -125,6 +125,7 @@
 </template>
 
 <script>
+ import {mapActions,mapState} from 'vuex'
   export default {
     data() {
       return {
@@ -161,8 +162,22 @@
           name: '怪胎',
         }]
       }
-    }
+    },
+    computed:{
+        ...mapState('movie',['videos']),
+    },
+    created(){
+        this.findAllVideo()
+    },
+    methods:{
+      ...mapActions('movie',['findAllVideo']),
+        toPlay(){
+            console.log(111)
+            this.$router.push({path:'/play'})
+        },
+       
   }
+}
 </script>
 
 
