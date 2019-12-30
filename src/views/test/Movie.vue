@@ -12,19 +12,10 @@
                     <a href=""><img id="movie1" :src="item.headImage" style="height:100%; width:100%"/></a>
 					<div id="gqm"><a href=""><p align="center" id="movie1"></p></a></div>
                     <div><p align="center">{{item.videoName}}</p></div>
-
                 </div>
                 <div id="z1q">
                     <a href=""><img src="@/assets/ys1.jpg" style="height:100%; width:100%"/></a>
 					<div id="gqm"><a href=""><p align="center">蜘蛛侠-英雄归来</p></a></div>
-                </div>
-                <div id="z1q">
-                    <a href=""><img src="@/assets/yx1.jpg" style="height:100%; width:100%"/></a>
-					<div id="gqm"><a href=""><p align="center">一个母亲的复仇</p></a></div>
-                </div>
-                <div id="z1q">
-                    <a href=""><img src="@/assets/ys3.png" style="height:100%; width:100%"/></a>
-					<div id="gqm"><a href=""><p align="center">教授与疯子</p></a></div>
                 </div>
             </el-carousel-item>
             <el-carousel-item>

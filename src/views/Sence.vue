@@ -7,14 +7,9 @@
     <div id="right">
     <h2 id="bt">播放设备：</h2>
         <div id="dx">
-	    <el-checkbox-group v-model="checkList">
-            <el-checkbox label="电视"></el-checkbox>
-            <el-checkbox label="音响"></el-checkbox>
-            <el-checkbox label="投影"></el-checkbox>
-        </el-checkbox-group>
         <br/>
-        <el-button type="primary">添加设备</el-button>
-        <el-button type="primary">设备细节控制</el-button>
+        <el-button type="primary">获取当前播放设备</el-button>
+        <el-button type="primary">设置场景模式</el-button>
         </div>
     <h2 id="bt">播放列表：</h2>
         <div id="lb">

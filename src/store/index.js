@@ -4,6 +4,7 @@ import home from './home'
 import equipment from './equipment'
 import music from './music'
 import Control from './Control'
+import movie from './movie'
 
 Vue.use(Vuex)
 
@@ -12,6 +13,7 @@ export default new Vuex.Store({
     home,
     equipment,
     music,
-    Control
+    Control,
+    movie
   }
 })

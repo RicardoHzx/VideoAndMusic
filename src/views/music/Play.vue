@@ -38,8 +38,8 @@
                         <el-checkbox label="投影"></el-checkbox>
                     </el-checkbox-group>
                     <br/>
-                    <el-button type="primary">添加设备</el-button>
-                    <el-button type="primary">设备细节控制</el-button>
+                    <el-button type="primary">获取播放设备</el-button>
+                    <el-button type="primary">设置场景模式</el-button>
                     </div>
             </div>
         </div>

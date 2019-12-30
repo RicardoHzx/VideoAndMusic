@@ -14,7 +14,6 @@ export default {
     },
     actions:{
        async findAllVideo(context){
-           alert(1)
            let res = await get('/videos/getAllVideos')
            context.commit('refreshVideos',res.data)
        }

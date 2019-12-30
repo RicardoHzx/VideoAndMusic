@@ -1,7 +1,36 @@
 <template>
     <div id="all">
-    <div id="kz">
-      <p id="bt">播放设备：</p><el-button type="primary" id="gg">刷新当前状态</el-button>
+       <p id="bt">当前设备配置：</p><el-button type="primary" id="gg">刷新当前状态</el-button>
+       <div id="bfsb">
+           <img id="sbt" src="@/assets/音响.jpg" width="100%" height="100%"/>
+       </div>
+       <div id="bfsb">
+           <p id="sbtm">播放设备：</p>
+           <p id="sbm">当前使用：</p>
+           
+           <p id="sbm">当前播放内容：</p>
+           
+       </div>
+       <div id="bfsb">
+           <img id="sbt" src="@/assets/灯具.jpg" width="100%" height="100%"/>
+       </div>
+       <div id="bfsb">
+           <p id="sbtm">场景设备：</p>
+            <div id="kg"><p id="sbm">一路灯</p><el-switch v-model="value1" active-color="#13ce66" inactive-color="#ff4949" @change='openLight_1($event,1)'>
+            </el-switch>
+            </div>
+            <div id="kg"><p id="sbm">二路灯</p><el-switch v-model="value2" active-color="#13ce66" inactive-color="#ff4949" @change='openLight_2($event,1)'>
+            </el-switch>
+            </div>
+            <div id="kg"><p id="sbm">三路灯</p><el-switch v-model="value3" active-color="#13ce66" inactive-color="#ff4949" @change='openLight_3($event,1)'>
+            </el-switch>
+            </div>
+            <div id="kg"><p id="sbm">窗帘</p><el-switch v-model="value4" active-color="#13ce66" inactive-color="#ff4949" @change='opencurtain($event,1)'>
+            </el-switch>
+            </div>
+       </div>
+    <!--<div id="kz">
+      <p id="bt">当前播放设备：</p><el-button type="primary" id="gg">刷新当前状态</el-button>
       <div id="sb1">
         <div id="sbk">
              <h3 id="sbm">音响1</h3>
@@ -46,7 +75,7 @@
                       </el-switch>
                       </div>
                   </div>
-              </div>
+              </div>-->
     </div>
 </template>
 
@@ -114,18 +143,15 @@
 <style scoped>
     #all{
         float: left ;
-        margin: 3% 0% 0% 10%;
-    }
-    #kz{
-        float: left ;
+        margin: 3% 0% 0% 5%;
+        width: 90%;
+        height: 97%;
     }
     #bt{
         float: left;
         width: 65%;
-        font-size: 20px;
+        font-size: 26px;
         margin-top: -20px;
-        margin-bottom: 30px;
-        margin-left: 0%;
     }
     #sb1{
         float: left;
@@ -139,12 +165,23 @@
         height: 260px;
     }
     #sbm{
-        margin-top: -15px;
+        float: left;
+        width: 210px;
+        font-size: 20px;
+        margin-left: 15px;
+        margin-bottom: 15px;
+    }
+    #sbtm{
+        float: left;
+        font-size: 24px;
+        margin-left: 15px;
+        margin-bottom: 15px;
     }
     #sbt{
-        
-        width: 250px;
-        height: 200px;
+        float: left;
+        width: 300px;
+        height: 300px;
+
     }
     .el-slider{
         margin-left: 60px;
@@ -154,8 +191,10 @@
         width:40px;
     }
     #gg{
+        float: right ;
         margin-top: -20px;
         margin-left: 90px;
+        margin-bottom: 8px;
     }
     #sb2{
         float: left;
@@ -166,7 +205,14 @@
     }
     #kg{
         float: left;
-        margin-left: 80px;
-        margin-right: 100px;
+        margin-bottom: 20px;
+        margin-left: 10px;
+    }
+    #bfsb{
+        float: left;
+        margin-left: 10px;
+        margin-top: 44px;
+        width: 280px;
+        height: 300px;
     }
 </style>
